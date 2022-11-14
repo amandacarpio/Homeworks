@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>gitPub App</title>
+    </head>
+<body>
+    <h1>Welcome to gitPub</h1>
+
+    <ul>
+        <% for(let i = 0; i < allDrinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>"><%=allDrinks[i].name.charAt(0).toUpperCase() + allDrinks[i].name.slice(1)%></a>
+            </li>
+        <% } %>
+    </ul>
+
+    <a href="/food" id="goBack">Food Menu</a>
+    <style type="text/css">
+        body {
+            color: blanchedalmond;
+            background-color: steelblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        a {
+            font-size: 20px;
+        }
+
+        #goBack {
+            font-size: 25px;
+        }
+    </style>
+</body>
+</html>

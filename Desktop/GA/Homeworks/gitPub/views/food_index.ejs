@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Food Menu</title>
+    </head>
+    <body>
+        <h1>Food Menu</h1>
+        <% for(let i = 0; i < allFoods.length; i++) { %>
+            <li>
+                <a href="/food/<%=i%>"><%=allFoods[i].name%></a>
+            </li>
+            <% } %>
+            <br>
+            <a href="/drinks" id="goBack">Back to Drinks Menu</a>
+        <style type="text/css">
+            body {
+                color: brown;
+                background-color: blanchedalmond;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            a {
+                font-size: 20px;
+            }
+
+            #goBack {
+                font-size: 25px;
+            }
+        </style>
+    </body>
+</html>

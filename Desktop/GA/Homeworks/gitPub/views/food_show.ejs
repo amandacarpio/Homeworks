@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Selected Food</title>
+    </head>
+    <body>
+        <h1>Food Menu</h1>
+        <h2><%=selectedName.charAt(0).toUpperCase() + selectedName.slice(1)%></h2>
+        <img src="<%=selectedImage%>">
+        <h3>$<%=selectedPrice%></h3>
+        <a href="/food" id="goBack">Go Back</a>
+
+        <style type="text/css">
+            body {
+                color: brown;
+                background-color: blanchedalmond;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            #goBack {
+                font-size: 25px;
+            }
+        </style>
+    </body>
+</html>
