@@ -11,6 +11,31 @@
 <body>
     <div class="container"></div>
     <h1>Budgtr ALL</h1>
+    <div class="sum"><h3>
+        <% let bankAccount = []; %> 
+        <% for (let j=0; j < budgetData.length; j++){%> 
+        <% bankAccount.push(budgetData[j].amount) %> 
+        <% } %> 
+        <% let sum =
+        bankAccount.reduce((accumulator, currentValue) => { return accumulator +
+        parseInt(currentValue); }, 0); %> 
+        <%=sum %>
+        <% if(sum < 0){ %>
+            <style>
+                .sum {
+                    background-color: red;
+                } 
+            </style>
+        <% } else if(sum > 1000){ %>
+            <style>
+                .sum {
+                    background-color: green;
+                }
+            </style>
+            <% } %>
+        </h3>
+    </div>
+    <a href="/budgets/new"><button>New Item</button></a> 
     <table>
         <% for(let i=0; i < budgetData.length; i++) { %>
         <tr>
@@ -20,7 +45,6 @@
             <td>$<%=budgetData[i].amount%></td>
         </tr>
         <% } %>
-        <a href="/budgets/new"><button>New Item</button></a> 
     </table>
 </body>
 </html>

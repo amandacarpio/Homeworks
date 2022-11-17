@@ -1,13 +1,11 @@
 require("dotenv").config()
 const express = require("express")
-const Budget= require("./models/budget.js")
 const app = express()
+const Budget= require("./models/budget.js")
 const PORT = process.env.PORT || 3004
 
 app.use("/static", express.static("public"))
 app.use(express.urlencoded({ extended: true }))
-
-// const router = express.Router()
 
 // INDEX: GET /budgets
 app.get("/budgets", (req, res) => {
@@ -32,7 +30,7 @@ app.get("/budgets/:id", (req, res) => {
 
 // CREATE: POST /budgets
 app.post("/budgets", (req, res) => {
-    Budget.create(req.body)
+    Budget.push(req.body)
     // newBudget.push("/budgets")
     res.redirect("/budgets")
 })
