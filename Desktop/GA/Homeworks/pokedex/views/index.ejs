@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs')%>
+
+<body>
+    <h1>Choose your Pokedex</h1>
+    <h2>Or add a new Pokemon</h2>
+    <a href="/pokemon/new"><button>Add New</button></a>
+    <div class="container"> 
+        
+        <% for(let i=0; i < data.length; i++) { %>
+            <div class="card">
+
+                <h2><%= data[i].name %></h2>
+                <a href="/pokemon/<%=i%>">
+                    <img src="<%=data[i].img%>">
+                </a>
+
+            </div>
+        <% } %>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        color: white;
+        font-family: 'Amatic SC', cursive;
+        font-family: 'Island Moments', cursive;
+        font-family: 'Russo One', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: yellow;
+        font-size: 65px;
+        text-align: center;
+    }
+
+    h2 {
+        color: yellow;
+        text-align: center;
+    }
+    
+    /* a {
+        /* text-align: center; */
+        /* margin: 0 15px; */
+        /* border: 3px solid blue;  */
+        /* height: 250px;
+        width: 200px; */
+   /* } */
+
+    img {
+        height: 250px;
+        width: 200px;
+        border: 1px solid green;
+        /* object-fit: contain; */
+        /* display: none; */
+    }
+
+    button {
+        background-color: yellow;
+        border-radius: 11px;
+        padding: 15px 18px;
+        margin: 5px 5px 20px 5px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 0 auto;
+        border: 3px solid yellow;
+        min-width: 750px;
+    }
+    
+    .card {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        width: 30%;
+        height: 300px;
+        margin: 15px auto;
+        border: 3px solid yellow;
+    }
+
+</style>
+</html>
