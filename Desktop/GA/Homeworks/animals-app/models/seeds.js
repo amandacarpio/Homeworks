@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('./connection')
-const Animals = require('./animals')
+const Animals = require('./animalSchema')
 
 mongoose.connection.on('open', () => {
 
@@ -19,7 +19,7 @@ mongoose.connection.on('open', () => {
         // create new fruits once old fruits are deleted
 
     Animals.create(startingAnimals, (err, data) => {
-        console.log(data)
+        res.json(data)
     })
     })
 })

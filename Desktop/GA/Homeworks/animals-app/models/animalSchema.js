@@ -11,6 +11,6 @@ const animalsSchema = new Schema ({
     lifeExpectancy: Number
 })
 
-const Animals = model('animals', animalsSchema) 
+const Animals = model('animals', animalsSchema) // first param is name of model we're making // second param is name of the schema created above
 
 module.exports = Animals
